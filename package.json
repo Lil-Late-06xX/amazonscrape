@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "scrape amazon for data needed for studies",
   "main": "index.js",
-  "repository": "https://github.com/Lil-Late-06xX/amazonS",
+  "repository": "https://github.com/Lil-Late-06xX/amazonscrape",
   "author": "PlayGrounQ",
   "license": "MIT"
 }
+
+
