@@ -1,0 +1,9 @@
+{
+  "name": "amazonscrape",
+  "version": "1.0.0",
+  "description": "scrape amazon for data needed for studies",
+  "main": "index.js",
+  "repository": "https://github.com/Lil-Late-06xX/amazonS",
+  "author": "PlayGrounQ",
+  "license": "MIT"
+}
