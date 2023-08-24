@@ -1,5 +1,7 @@
 import puppeteer from 'puppeteer';
 import { load } from 'cheerio';
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 async function scrapeData() {
