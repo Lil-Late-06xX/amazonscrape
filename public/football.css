@@ -173,3 +173,17 @@ img{
     width: 100vw;
 }
 
+.back{
+    width: 50px;
+    border-radius: 10px;
+    position: relative;
+    background-color: darkred;
+    top: 10px;
+}
+
+.back a{
+    color: aliceblue;
+    font-size: larger;
+    text-decoration: none;
+    
+}

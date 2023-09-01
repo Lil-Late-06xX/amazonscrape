@@ -50,8 +50,7 @@ h2{
     width: 18%;
     background-color: dimgray;
     border: none;
-    border-bottom: 10px #24252a solid;
-    border-bottom-right-radius: 16px;
+    
 }
 .trackedH2{
     width: 70%;
@@ -124,6 +123,18 @@ body{
     
 }
 
+.back{
+    width: 50px;
+    border-radius: 10px;
+    position: relative;
+    background-color: darkred;
+    top: 340%;
+}
+.back a{
+    color: aliceblue;
+    font-size: larger;
+}
+
 .loader {
     border: 5px solid #f3f3f3;
     border-top: 5px solid #3498db;
@@ -133,8 +144,8 @@ body{
     animation: spin 1s linear infinite;
     display: none;
     position: absolute;
-    top: 8%;
-    left: 2%;
+    top: 10%;
+    left: 0.5%;
     transform: translate(-50%, -50%);
   }
   
