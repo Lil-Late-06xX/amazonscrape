@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Project</title>
+    <link rel="stylesheet" href="amazon.css">
+</head>
+<body>
+
+<div class="container">
+  
+  <section class="search">
+    <button><a href="/index.html">Back</a></button>
+    <h2 class="searchH2">Scrape</h2>
+    <div class="loader" id="loader"></div>
+    <div class="containerInput">
+    <input type="text" id="searchBar" placeholder="https://www.amazon.com">
+    <button id="addButton">Start</button>
+    </div>
+  </section>
+  
+  
+  <section  class="products">
+    <div class="looked-at-now">
+      <h2>Products</h2>
+      <ul id="hiddenList">
+     
+     
+    
+        </ul>
+
+
+    </div>
+
+  <div class="tracked">
+          <h2 class="trackedH2">Tracked</h2>
+      <div class="hiddenList-tracked" >
+        <li><a href="#" class="product">iphone</a></li>
+        <li><a href="#" class="product">rtx</a></li>
+        <li><a href="#" class="product">samsung</a></li>
+        <li><a href="#" class="product">test data</a></li>
+        <li>
+      </div>
+  </div>
+
+
+
+
+
+  </section>
+</div>
+
+
+
+<section class="sql">
+  <h2>Scraped data</h2>
+  <div id="mysql_data">
+
+
+    </div>
+</section>
+
+  
+
+
+
+
+    <script src="frontend2.js"></script>
+</body>
+</html>
