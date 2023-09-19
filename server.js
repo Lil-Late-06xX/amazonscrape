@@ -276,9 +276,9 @@ async function scrapeData() {
       const content = await page.content();
       const $ = load(content);
   
-      $('.match-event').each((index, element) => {
+      $('.alkooralive').each((index, element) => {
 
-        const title = $(element).find('.match-event a').attr('title');
+        const title = $(element).find('.alkooralive a').attr('title');
         const rightTeamName = $(element).find('.right-team .team-name').text().trim();
         const rightLogo = $(element).find('.right-team .team-logo img').attr('data-img');
         const leftLogo = $(element).find('.left-team .team-logo img').attr('data-img');
@@ -286,9 +286,8 @@ async function scrapeData() {
         const matchTime = $(element).find('.match-timing #match-time').text().trim();
         const result = $(element).find('.match-timing #result').text().trim();
         const matchInfo = $(element).find('.match-info li span').map((i, el) => $(el).text()).get().join(' | ');
-        const link = $(element).find('.match-event a').attr('href');
+        const link = $(element).find('.alkooralive a').attr('href');
 
-  
   
         
         if ((rightTeamName == '') && (leftTeamName == '')) {

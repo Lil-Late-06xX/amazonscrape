@@ -1,0 +1,109 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable no-unused-vars */
+// Purpose: Main App component
+import { useEffect, useState } from 'react';
+import './App.css'
+
+
+function App() {
+
+let [inputValue, setInputValue] = useState("");
+
+    let dataHere = JSON.parse(localStorage.getItem('tasks'))
+
+let [newTask, setNewTask] = useState(dataHere || []);
+
+
+useEffect(() => 
+{
+  // Save tasks to local storage whenever the newTask state changes
+  localStorage.setItem('tasks', JSON.stringify(newTask));
+}, [newTask]);
+
+
+      function generateRandomKey() {
+        return Math.floor(Math.random() * 10) + 1
+      }
+
+
+      function inputV(e){
+              e.preventDefault();
+              let v = e.target.value
+              setInputValue(v)
+              
+      }
+
+      function save(e){
+        if (inputValue === '' ){
+          return
+        }
+        e.preventDefault();
+        const randomKey = generateRandomKey();
+        const newTaskItem = {
+          id: randomKey,
+          text: inputValue,
+        };
+        setNewTask([...newTask , newTaskItem])
+        setInputValue('')
+      }
+
+      function deleteTask(taskId) {
+        const updatedTasks = newTask.filter((task) => task.id !== taskId);
+        setNewTask(updatedTasks);
+      }
+
+
+      function toggleTaskChecked(taskId) {
+        const checktask = newTask.map((task) => {
+          if (task.id === taskId) {
+            return {
+              ...task,
+              checked: !task.checked, // Toggle the checked state
+            };
+          }
+          return task;
+        });
+        setNewTask(checktask);
+      }
+
+
+
+
+
+
+
+  return (
+    <>
+    <form className='form' action="submit">
+      <h1 >To do list</h1>
+      <label htmlFor="input"> Enter task: </label>
+      <input  onChange={inputV} type="text"  value={inputValue} id='input'/>
+      <button  onClick={save} className='btn btn-primary'>Add Task </button>
+      <h2>Tasks to do:</h2>
+
+      <ol>
+          {newTask.map((task , index) => (
+    
+    <div className='list' key={index} >
+              <li key={task.id} >
+                <input
+                  type='checkbox'
+                  checked={task.checked} // Set the checked state
+                  onChange={() => toggleTaskChecked(task.id)} // Toggle the checked state
+                />{' '}
+                {task.text}
+              </li>
+            <button onClick={() => deleteTask(task.id)} key={index+10} className='btn btn-danger' > dlt </button>
+    </div>      
+          ))}
+        </ol>
+
+    </form>
+
+
+
+    </>
+  )
+}
+
+export default App
